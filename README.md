@@ -38,7 +38,7 @@ We aim to sample proteins into pools such that
 (3) pool sizes are close to the AlphaFold3 recommended input limit of 5,120 tokens.
 We achieve this with "locally greedy sampling" as in ([Todor et al, 2026](https://doi.org/10.1038/s44320-026-00189-7))
 except that the interactions are weighted by the product of the length of the interacting proteins.
-For *Mgen*, this reduces the number of pools needed to cover every interaction [from 2,027 to 1,866](https://github.com/jurgjn/pooled-ppi/blob/main/examples/sample-pools-mgen/sample-pools-mgen-colab.ipynb).
+For *Mgen*, this reduces the number of pools needed to cover every interaction [from 2,027 to 1,866](https://github.com/jurgjn/pooled-ppi/blob/main/examples-colab/sample-pools-mgen/sample-pools-mgen-colab.ipynb).
 
 ### Running AlphaFold3 on large inputs at scale
 We are running AlphaFold3 ([Abramson et al, 2024](https://doi.org/10.1038/s41586-024-07487-w)) on heterogeneous hardware with A100, GH200, RTX4090, and RTX PRO 6000 GPUs.
