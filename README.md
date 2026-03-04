@@ -10,6 +10,7 @@ Our work-in-progress predictions are publicly available.*
 <p align="center">
 <img src="figures/recap_by_string_score.svg" />
 </p>
+
 To ask whether we are recapitulating known interactors, we compared the subset of finished predictions (81,912 from 283,146 pools) to evidence of physical interaction from STRING. We binned the STRING physical interaction score to create groups of physical interactors with increasing levels of confidence. We then tested the ability of our pooled AlphaFold3 predictions to differentiate between interactions assigned to a STRING confidence bin, and interactions without any evidence in STRING.
 
 Size-corrected AlphaFold3 confidence scores are better at re-capitulating higher-confidence STRING interactions (Figure). The AUC ranges from 0.6 for the lowest-confidence to 0.84 for the highest-confidence bins.
