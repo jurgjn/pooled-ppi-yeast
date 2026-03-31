@@ -20,8 +20,7 @@ To browse finished predictions, we created a self-contained web app available fr
 ```
 docker run -p 8501:8501 jurgjn/pooled-ppi-yeast:v26.1
 ```
-The web app works offline, and contains top-scoring predicted structures for approximately four million heterodimers,
-a quarter of all possible pairwise protein-protein interactions in yeast.
+The web app works offline, and contains top-scoring predicted structures for all modelled heterodimers.
 
 **These predicted AlphaFold3 models of protein complexes are shared as a community resource to accelerate structural biology research.
 We encourage the use of this data for targeted studies, provided appropriate credit is given.
