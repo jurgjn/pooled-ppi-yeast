@@ -28,7 +28,7 @@ We encourage the use of this data for targeted studies, provided appropriate cre
 We kindly ask that researchers refrain from publishing proteome-wide or large-scale data mining studies until our formal publication is released.
 However, we welcome inquiries regarding collaborative efforts and are open to joint analysis projects that leverage this resource for broader biological insights.**
 
-**All structures generated with AlphaFold3, subject to [Output Terms of Use](OUTPUT_TERMS_OF_USE.md).**
+**All structures generated with AlphaFold3, subject to [Output Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md).**
 
 ## Methods
 See [SUPPLEMENTARY.md](SUPPLEMENTARY.md) for technical details.
