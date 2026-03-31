@@ -18,7 +18,7 @@ Size-corrected AlphaFold3 confidence scores are better at re-capitulating higher
 ### A resource of predicted protein-protein interactions in yeast
 To browse finished predictions, we created a self-contained web app available from [Docker Hub](https://hub.docker.com/r/jurgjn/pooled-ppi-yeast):
 ```
-docker run -p 8501:8501 jurgjn/pooled-ppi-yeast
+docker run -p 8501:8501 jurgjn/pooled-ppi-yeast:v26.1
 ```
 The web app works offline, and contains top-scoring predicted structures for approximately four million heterodimers,
 a quarter of all possible pairwise protein-protein interactions in yeast.
