@@ -37,3 +37,28 @@ which uses 3Dmol.js ([Rego et al, 2014](https://doi.org/10.1093/bioinformatics/b
 | RTX 4090 24GB     | 84GB | 24h | 12h | v3.0.1  | Unif. mem & adjust shard spec |
 
 *Supplementary Table. Resources used to run inference for a single pool. For lower-end GPUs, we enabled unified memory & adjusted shard spec [as specified in the AlphaFold3 documentation](https://github.com/google-deepmind/alphafold3/blob/main/docs/performance.md#nvidia-a100-40-gb). All containers are [available on Docker Hub](https://hub.docker.com/r/jurgjn/alphafold3).*
+
+## Supplementary Data
+| Name                 | URL / Container file |
+|----------------------|----------------------|
+| Data pipeline        | https://doi.org/10.5281/zenodo.18925033
+| Proteins             | `proteins.parquet`
+| Pools                | `pools.parquet`
+| Confidence metrics   | `summary_confidences.parquet`
+| Interactions         | `summary_pairs.parquet`
+| Predicted structures | `predictions-db/`
+
+### Proteins
+- `uniprot_id`, `seq`, `seq_len` uniprot identifier, sequence and length from the [yeast v4 proteome](https://ftp.ebi.ac.uk/pub/databases/alphafold/v4/UP000002311_559292_YEAST_v4.tar) of the AlphaFold Protein Structure Database
+- `af3_id` contains [AlphaFold3-sanitised uniprot identifiers](https://github.com/google-deepmind/alphafold3/issues/480) to track proteins, e.g. Q3E7A6 becomes q3e7a6
+- `is_expressed` whether the protein is considered as expressed under standard conditions for pool sampling
+- `uniprot_genes`, `uniprot_locus`, `uniprot_entry` additional protein/gene identifiers from UniProt 2021_04
+
+### Pools
+- `pool_id` proteins in the pool (from `af3_id`), sorted and separated by underscores
+- `pool_size` total number of residues in the pool
+- `source` indicates whether pool was sampled from all yeast v4 proteome sequences (`all`) or from the subset expressed under standard conditions (`std`)
+- `pool_hash` is a hash of `pool_id` (with `hashlib.sha1`), used as a unique identifer to track pools as `pool_id` can exceed file name length limits
+
+### Predicted structures
+Foldcomp database with the top predicted structures. Foldcomp [does not support multimers](https://github.com/steineggerlab/foldcomp/issues/50); we circumvent this by storing every pool/chain combination separately with `{pool_hash}_{af3_id}` as the primary key/identifier.
